@@ -1,0 +1,11 @@
+,------.  ,------.,--.   ,--.,--.,------.  ,------.  ,---.   ,---.
+|  .-.  \ |  .---' \  `.'  / |  ||  .-.  \ |  .---' /  O  \ '   .-'
+|  |  \  :|  `--,   \     /  |  ||  |  \  :|  `--, |  .-.  |`.  `-.
+|  '--'  /|  `---.   \   /   |  ||  '--'  /|  `---.|  | |  |.-'    |
+`-------' `------'    `-'    `--'`-------' `------'`--' `--'`-----'
+
+${application.title} ${application.version}
+NAME: ${spring.application.name}
+DEBUG: ${debug} | TYPE: ${type}
+SWAGGER: http://localhost:${server.port}/swagger-ui/index.html
+

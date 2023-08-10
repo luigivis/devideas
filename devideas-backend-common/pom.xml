@@ -2,7 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <groupId>com.devideas</groupId>
         <artifactId>devideas-backend-parent</artifactId>
@@ -10,26 +9,14 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.devideas</groupId>
-    <artifactId>devideas-backend-auth</artifactId>
+    <artifactId>devideas-backend-common</artifactId>
     <version>1.0</version>
-    <name>devideas-backend-auth</name>
-    <description>devideas-backend-auth</description>
-    <packaging>jar</packaging>
+    <name>devideas-backend-common</name>
+    <description>Common lib</description>
 
     <properties>
-        <app.name>${groupId}</app.name>
         <java.version>17</java.version>
-        <microservice.port>8182</microservice.port>
     </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.devideas</groupId>
-            <artifactId>devideas-backend-common</artifactId>
-            <version>1.0</version>
-        </dependency>
-    </dependencies>
 
     <build>
         <plugins>
@@ -38,7 +25,6 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version> <!--$NO-MVN-MAN-VER$ -->
                 <configuration>
-                    <release>${java.version}</release>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                 </configuration>

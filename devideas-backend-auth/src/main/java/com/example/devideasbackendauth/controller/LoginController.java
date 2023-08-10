@@ -1,5 +1,7 @@
 package com.example.devideasbackendauth.controller;
 
+import com.example.devideasbackendauth.advice.LoginAdvice;
+import com.example.devideasbackendauth.dto.request.LoginDTO;
 import com.example.devideasbackendauth.service.imp.LoginServiceImp;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,18 +14,10 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/login")
 public class LoginController {
 
-    @Autowired
-    private LoginServiceImp loginServiceImp;
+  @Autowired private LoginAdvice loginAdvice;
 
-    @PostMapping
-    public ResponseEntity<String> login(@RequestParam String email, @RequestParam String password) {
-        boolean authenticated = loginServiceImp.auth(email, password);
-
-        if (authenticated) {
-            return ResponseEntity.ok("Inicio de sesión exitoso");
-        } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Credenciales inválidas");
-        }
-    }
-
+  @PostMapping
+  public ResponseEntity<?> login(@RequestBody LoginDTO loginDTO) {
+    return loginAdvice.loginVerified(loginDTO);
+  }
 }
